@@ -586,6 +586,8 @@ a, button {
 
 
 
+
+
 /* Package Section */
 .packages-section {
   padding: 60px 20px;
@@ -698,6 +700,13 @@ a, button {
     font-size: 1.1rem;
   }
 }
+
+
+
+
+
+
+
 
 
 /* booking page */
@@ -849,4 +858,23 @@ a, button {
   .contact-form textarea {
     font-size: 0.95rem;
   }
+}
+
+/* for mobile sliding effect */
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+
+.featured-grid {
+  display: flex;
+  gap: 16px;
+}
+
+.destination-card {
+  min-width: 260px;
+  flex-shrink: 0;
 }

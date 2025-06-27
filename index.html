@@ -11,9 +11,7 @@
   <!-- Navigation Bar -->
   <header class="navbar">
     <div class="logo">TravelExplorer</div>
-    <!-- Hamburger Toggle -->
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <!-- Navigation Links -->
     <nav id="nav-menu">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -42,14 +40,13 @@
   <!-- Featured Destinations -->
   <section class="destinations-section">
     <h2>Featured Destinations</h2>
-    <div id="destinationContainer" class="card-grid featured-grid"></div>
+    <div class="scroll-container" id="autoScroll">
+      <div id="destinationContainer" class="card-grid featured-grid"></div>
+    </div>
     <div style="text-align: center; margin-top: 20px;">
       <a href="destinations.html" class="btn-secondary">View All Destinations</a>
     </div>
   </section>
-
-  <div id="destinationContainer" class="card-grid"></div>
-
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -78,6 +75,24 @@
         `;
         container.appendChild(card);
       });
+
+      // Auto-scroll logic
+      const scrollContainer = document.getElementById("autoScroll");
+      let scrollAmount = 0;
+      const scrollStep = 270; // approx width of one card + margin
+
+      setInterval(() => {
+        scrollContainer.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth"
+        });
+
+        scrollAmount += scrollStep;
+
+        if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
+          scrollAmount = 0;
+        }
+      }, 1000);
     });
 
     // Hamburger menu toggle
