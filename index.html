@@ -6,13 +6,15 @@
   <title>Travel Explorer</title>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* Inline mobile scroll styles (you can move this to styles.css) */
     .scroll-container {
       overflow-x: auto;
       white-space: nowrap;
       scroll-behavior: smooth;
-      padding-bottom: 10px;
+     padding: 10px 16px 10px 10px;
     }
+.scroll-container {
+  padding: 10px 16px 10px 10px; /* left and right */
+}
 
     .scroll-inner {
       display: flex;
@@ -35,9 +37,15 @@
       object-fit: cover;
     }
 
+    .scroll-inner::after {
+      content: '';
+      flex-shrink: 0;
+      width: 16px;
+    }
+
     @media (min-width: 769px) {
       .scroll-container {
-        overflow: visible;
+        overflow-x: visible;
       }
 
       .scroll-inner {
@@ -108,37 +116,22 @@
   <script src="js/main.js"></script>
 
   <script>
-    // Featured Destinations Script
-    document.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("destinationContainer");
-      featuredDestinations.forEach(dest => {
-        const card = document.createElement("div");
-        card.className = "destination-card";
-        card.innerHTML = `
-          <img src="${dest.image}" alt="${dest.name}" />
-          <h3>${dest.name}</h3>
-          <p>${dest.description}</p>
-        `;
-        container.appendChild(card);
-      });
+    // Auto-scroll only on mobile
+    const scrollWrapper = document.getElementById("autoScroll");
+    let scrollX = 0;
+    const scrollStep = 276;
 
-      // Auto-scroll only on mobile
-      const scrollWrapper = document.getElementById("autoScroll");
-      let scrollX = 0;
-      const scrollStep = 276;
-
-      function autoScroll() {
-        if (window.innerWidth < 768) {
-          scrollX += scrollStep;
-          if (scrollX >= scrollWrapper.scrollWidth - scrollWrapper.clientWidth) {
-            scrollX = 0;
-          }
-          scrollWrapper.scrollTo({ left: scrollX, behavior: "smooth" });
+    function autoScroll() {
+      if (window.innerWidth < 768) {
+        scrollX += scrollStep;
+        if (scrollX >= scrollWrapper.scrollWidth - scrollWrapper.clientWidth) {
+          scrollX = 0;
         }
+        scrollWrapper.scrollTo({ left: scrollX, behavior: "smooth" });
       }
+    }
 
-      setInterval(autoScroll, 1000);
-    });
+    setInterval(autoScroll, 2000);
 
     // Hamburger menu toggle
     function toggleMenu() {
