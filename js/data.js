@@ -3,7 +3,7 @@
 const featuredDestinations = [
   {
     name: "Goa",
-    image: "../images/goa.avif",
+    image: "images/goa.avif",
     description: "Sunny beaches and vibrant nightlife."
   },
   {
