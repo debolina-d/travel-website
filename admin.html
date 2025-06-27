@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/admin.css" />
+</head>
+
+<body>
+
+  <header class="admin-header">
+    Admin Dashboard
+  </header>
+
+  <!-- Update Company Logo -->
+  <section class="admin-section">
+    <h2>Update Company Logo</h2>
+    <div class="admin-section-content">
+      <input type="file" />
+      <button>Upload Logo</button>
+    </div>
+  </section>
+
+  <!-- Update Hero Section Background -->
+  <section class="admin-section">
+    <h2>Update Hero Section Background</h2>
+    <div class="admin-section-content">
+      <input type="file" />
+      <button>Upload Background</button>
+    </div>
+  </section>
+
+  <!-- Update Contact Details -->
+  <section class="admin-section">
+    <h2>Update Contact Details</h2>
+    <div class="admin-section-content">
+      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Phone" />
+      <input type="text" placeholder="Address" />
+      <button>Update Contact</button>
+    </div>
+  </section>
+
+  <!-- Add Package -->
+  <section class="admin-section">
+    <h2>Add Package</h2>
+    <div class="admin-section-content">
+      <input type="text" placeholder="Package Name" />
+      <input type="text" placeholder="Destination" />
+      <input type="text" placeholder="Price" />
+      <input type="file" />
+      <button>Add Package</button>
+    </div>
+  </section>
+
+  <!-- Remove Package -->
+  <section class="admin-section">
+    <h2>Remove Package</h2>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Package</th>
+          <th>Destination</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="removePackageTable">
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Add Featured Destination -->
+  <section class="admin-section">
+    <h2>Add Featured Destination</h2>
+    <div class="admin-section-content">
+      <input type="text" placeholder="Destination Name" />
+      <textarea placeholder="Description"></textarea>
+      <input type="file" />
+      <button>Add Featured Destination</button>
+    </div>
+  </section>
+
+  <!-- Remove Featured Destinations -->
+  <section class="admin-section">
+    <h2>Remove Featured Destination</h2>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="removeFeaturedDestTable">
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Add All Destination -->
+  <section class="admin-section">
+    <h2>Add Destination</h2>
+    <div class="admin-section-content">
+      <input type="text" placeholder="Destination Name" />
+      <textarea placeholder="Description"></textarea>
+      <input type="file" />
+      <button>Add Destination</button>
+    </div>
+  </section>
+
+  <!-- Remove All Destinations -->
+  <section class="admin-section">
+    <h2>Remove All Destinations</h2>
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="removeAllDestTable">
+        <!-- Populated by JS -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- JS Includes -->
+  <script src="../js/packages.js"></script>
+  <script src="../js/data.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const packageTable = document.getElementById("removePackageTable");
+      const featuredTable = document.getElementById("removeFeaturedDestTable");
+      const allDestTable = document.getElementById("removeAllDestTable");
+
+      // Load Packages
+      packages.forEach(pkg => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${pkg.name}</td>
+          <td>${pkg.destination}</td>
+          <td>${pkg.price}</td>
+          <td><button>Remove</button></td>
+        `;
+        packageTable.appendChild(row);
+      });
+
+      // Load Featured Destinations
+      featuredDestinations.forEach(dest => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${dest.name}</td>
+          <td><button>Remove</button></td>
+        `;
+        featuredTable.appendChild(row);
+      });
+
+      // Load All Destinations
+      allDestinations.forEach(dest => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${dest.name}</td>
+          <td><button>Remove</button></td>
+        `;
+        allDestTable.appendChild(row);
+      });
+    });
+  </script>
+
+</body>
+</html>

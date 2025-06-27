@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All Destinations - Travel Explorer</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">TravelExplorer</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html" class="active">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Explore All Destinations</h1>
+    <p>Discover the most beautiful travel destinations across India</p>
+  </section>
+
+  <!-- All Destinations Grid -->
+  <section class="destinations-section">
+    <div id="allDestinationsContainer" class="card-grid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 TravelExplorer. All rights reserved.</p>
+    <div class="social-icons">
+      <img src="../assets/icons/facebook.svg" alt="Facebook">
+      <img src="../assets/icons/instagram.svg" alt="Instagram">
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/data.js"></script>
+  <script src="../js/destinations.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

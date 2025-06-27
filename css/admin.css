@@ -1,0 +1,128 @@
+/* General Page Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eaf4fb;
+  color: #333;
+}
+
+/* Header */
+.admin-header {
+  background-color: #009688;
+  color: white;
+  padding: 16px;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Sections */
+.admin-section {
+  background-color: white;
+  margin: 20px auto;
+  padding: 16px 24px;
+  border-radius: 6px;
+  max-width: 900px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #009688;
+}
+
+.admin-section h2 {
+  margin-bottom: 12px;
+  color: #00796b;
+  font-size: 1.2rem;
+}
+
+/* Inputs & Buttons */
+.admin-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-section-content input[type="text"],
+.admin-section-content input[type="email"],
+.admin-section-content input[type="file"],
+.admin-section-content input[type="number"],
+.admin-section-content textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1 1 200px;
+  font-size: 0.95rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+button {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #00796b;
+}
+
+/* Table Styling */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background-color: white;
+}
+
+.admin-table thead {
+  background-color: #009688;
+  color: white;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+}
+
+/* Alternating Row Colors */
+.admin-table tbody tr:nth-child(even) {
+  background-color: #f2f8fc;
+}
+
+/* Remove Button in Tables */
+.admin-table button {
+  background-color: #d90429;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.admin-table button:hover {
+  background-color: #a10220;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .admin-section-content {
+    flex-direction: column;
+  }
+
+  .admin-section {
+    padding: 16px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}

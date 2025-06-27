@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travel Explorer</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">TravelExplorer</div>
+    <!-- Hamburger Toggle -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <!-- Navigation Links -->
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Adventure Awaits</h1>
+      <p>Discover the best travel experiences across India</p>
+      <a href="packages.html" class="btn-primary">Explore Packages</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Us</h2>
+    <p>We are a passionate travel company curating unforgettable adventures in India’s most stunning locations — from the Himalayan peaks to the sandy beaches of Goa.</p>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="destinations-section">
+    <h2>Featured Destinations</h2>
+    <div id="destinationContainer" class="card-grid featured-grid"></div>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="destinations.html" class="btn-secondary">View All Destinations</a>
+    </div>
+  </section>
+
+  <div id="destinationContainer" class="card-grid"></div>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 TravelExplorer. All rights reserved.</p>
+    <div class="social-icons">
+      <img src="../assets/icons/facebook.svg" alt="Facebook" />
+      <img src="../assets/icons/instagram.svg" alt="Instagram" />
+    </div>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="../js/data.js"></script>
+  <script>
+    // Featured Destinations Script
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("destinationContainer");
+      featuredDestinations.forEach(dest => {
+        const card = document.createElement("div");
+        card.className = "destination-card";
+        card.innerHTML = `
+          <img src="${dest.image}" alt="${dest.name}" />
+          <h3>${dest.name}</h3>
+          <p>${dest.description}</p>
+        `;
+        container.appendChild(card);
+      });
+    });
+
+    // Hamburger menu toggle
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Your Package</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">TravelExplorer</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Booking Section -->
+  <section class="booking-section">
+    <h2>Book Your Travel Package</h2>
+    <form class="booking-form">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <select required>
+        <option value="">Select Package</option>
+        <option value="goa">Goa Getaway</option>
+        <option value="manali">Manali Adventure</option>
+        <option value="kerala">Kerala Backwaters</option>
+        <option value="rajasthan">Rajasthan Heritage</option>
+      </select>
+      <input type="date" required />
+      <textarea rows="4" placeholder="Additional Notes (Optional)"></textarea>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 TravelExplorer. All rights reserved.</p>
+    <div class="social-icons">
+      <img src="../assets/icons/facebook.svg" alt="Facebook">
+      <img src="../assets/icons/instagram.svg" alt="Instagram">
+    </div>
+  </footer>
+
+  <!-- JS for menu toggle -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
