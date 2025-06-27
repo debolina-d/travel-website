@@ -4,49 +4,49 @@ const packages = [
     name: "Goa Getaway",
     destination: "Goa",
     price: "₹12,999",
-    image: "../images/goa.avif"
+    image: "images/goa.avif"
   },
   {
     name: "Himalayan Adventure",
     destination: "Manali",
     price: "₹18,499",
-    image: "../images/manali.avif"
+    image: "images/manali.avif"
   },
   {
     name: "Rajasthan Royal Tour",
     destination: "Jaipur",
     price: "₹15,299",
-    image: "../images/jaipur.avif"
+    image: "images/jaipur.avif"
   },
   {
     name: "Kerala Backwaters",
     destination: "Alleppey",
     price: "₹14,750",
-    image: "../images/kerala.avif"
+    image: "images/kerala.avif"
   },
   {
     name: "Northeast Explorer",
     destination: "Northeastern India",
     price: "₹16,800",
-    image: "../images/northeast.avif"
+    image: "images/northeast.avif"
   },
   {
     name: "Andaman Escape",
     destination: "Port Blair",
     price: "₹22,000",
-    image: "../images/andaman.avif"
+    image: "images/andaman.avif"
   },
   {
     name: "Ladakh Road Trip",
     destination: "Leh",
     price: "₹24,499",
-    image: "../images/ladakh.avif"
+    image: "images/ladakh.avif"
   },
   {
     name: "Golden Triangle",
     destination: "Delhi, Agra, Jaipur",
     price: "₹13,999",
-    image: "../images/goldentriangle.avif"
+    image: "images/goldentriangle.avif"
   }
 ];
 
