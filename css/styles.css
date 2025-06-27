@@ -861,20 +861,28 @@ a, button {
 }
 
 /* for mobile sliding effect */
-.scroll-container {
+/* Scroll container */
+.scroll-wrapper {
   overflow-x: auto;
-  overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
-  padding-bottom: 10px;
+  padding: 10px 0;
+  margin: 0 10px;
 }
 
-.featured-grid {
+/* Make it horizontal flex */
+.scroll-inner {
   display: flex;
   gap: 16px;
 }
 
+/* Make sure cards are inline-sized */
 .destination-card {
   min-width: 260px;
   flex-shrink: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
 }

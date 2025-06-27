@@ -5,6 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Travel Explorer</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Inline mobile scroll styles (you can move this to styles.css) */
+    .scroll-container {
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .scroll-inner {
+      display: flex;
+      gap: 16px;
+    }
+
+    .destination-card {
+      min-width: 260px;
+      flex-shrink: 0;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    @media (min-width: 769px) {
+      .scroll-container {
+        overflow: visible;
+      }
+
+      .scroll-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .destination-card {
+        min-width: 300px;
+        margin: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -41,7 +87,7 @@
   <section class="destinations-section">
     <h2>Featured Destinations</h2>
     <div class="scroll-container" id="autoScroll">
-      <div id="destinationContainer" class="card-grid featured-grid"></div>
+      <div id="destinationContainer" class="scroll-inner"></div>
     </div>
     <div style="text-align: center; margin-top: 20px;">
       <a href="destinations.html" class="btn-secondary">View All Destinations</a>
@@ -76,23 +122,22 @@
         container.appendChild(card);
       });
 
-      // Auto-scroll logic
-      const scrollContainer = document.getElementById("autoScroll");
-      let scrollAmount = 0;
-      const scrollStep = 270; // approx width of one card + margin
+      // Auto-scroll only on mobile
+      const scrollWrapper = document.getElementById("autoScroll");
+      let scrollX = 0;
+      const scrollStep = 276;
 
-      setInterval(() => {
-        scrollContainer.scrollTo({
-          left: scrollAmount,
-          behavior: "smooth"
-        });
-
-        scrollAmount += scrollStep;
-
-        if (scrollAmount >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-          scrollAmount = 0;
+      function autoScroll() {
+        if (window.innerWidth < 768) {
+          scrollX += scrollStep;
+          if (scrollX >= scrollWrapper.scrollWidth - scrollWrapper.clientWidth) {
+            scrollX = 0;
+          }
+          scrollWrapper.scrollTo({ left: scrollX, behavior: "smooth" });
         }
-      }, 1000);
+      }
+
+      setInterval(autoScroll, 1000);
     });
 
     // Hamburger menu toggle
