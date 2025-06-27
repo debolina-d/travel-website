@@ -8,17 +8,17 @@ const featuredDestinations = [
   },
   {
     name: "Manali",
-    image: "../images/manali.avif",
+    image: "images/manali.avif",
     description: "Snowy mountains and adventure sports."
   },
   {
     name: "Jaipur",
-    image: "../images/jaipur.avif",
+    image: "images/jaipur.avif",
     description: "Royal palaces and cultural heritage."
   },
   {
     name: "Kerala",
-    image: "../images/kerala.avif",
+    image: "images/kerala.avif",
     description: "Backwaters and tropical beauty."
   }
 ];
@@ -27,62 +27,62 @@ const allDestinations = [
   ...featuredDestinations,
   {
     name: "Ladakh",
-    image: "../images/ladakh.avif",
+    image: "images/ladakh.avif",
     description: "High-altitude desert and monasteries."
   },
   {
     name: "Andaman",
-    image: "../images/andaman.avif",
+    image: "images/andaman.avif",
     description: "Pristine beaches and coral reefs."
   },
   {
     name: "Rishikesh",
-    image: "../images/rishikesh.avif",
+    image: "images/rishikesh.avif",
     description: "Spiritual retreats and river rafting."
   },
   {
     name: "Udaipur",
-    image: "../images/udaipur.avif",
+    image: "images/udaipur.avif",
     description: "Lakes and romantic architecture."
   },
   {
     name: "Darjeeling",
-    image: "../images/darjeeling.avif",
+    image: "images/darjeeling.avif",
     description: "Tea gardens and Himalayan views."
   },
   {
     name: "Agra",
-    image: "../images/agra.avif",
+    image: "images/agra.avif",
     description: "Home to the Taj Mahal."
   },
   {
     name: "Kolkata",
-    image: "../images/kolkata.avif",
+    image: "images/kolkata.avif",
     description: "Art, culture, and colonial architecture."
   },
   {
     name: "Mysore",
-    image: "../images/mysore.avif",
+    image: "images/mysore.avif",
     description: "Palaces and sandalwood markets."
   },
   {
     name: "Shimla",
-    image: "../images/shimla.avif",
+    image: "images/shimla.avif",
     description: "Hill station charm and toy train."
   },
   {
     name: "Hampi",
-    image: "../images/hampi.avif",
+    image: "images/hampi.avif",
     description: "Ancient ruins and unique landscapes."
   },
   {
     name: "Pondicherry",
-    image: "../images/pondicherry.avif",
+    image: "images/pondicherry.avif",
     description: "French architecture and beaches."
   },
   {
     name: "Coorg",
-    image: "../images/coorg.avif",
+    image: "images/coorg.avif",
     description: "Coffee plantations and misty hills."
   }
 ];
